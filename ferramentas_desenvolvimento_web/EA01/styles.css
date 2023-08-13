@@ -4,3 +4,12 @@
 #salvar-button{
     background-color: green;
 }
+body {
+    background-color: #f3f3f3;
+}
+input[type="text"] {
+    border: 2px solid blue;
+    padding: 5px;
+    margin: 5px;
+    width: 250px;
+}
