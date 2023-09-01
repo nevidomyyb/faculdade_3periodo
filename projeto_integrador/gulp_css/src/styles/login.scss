@@ -1,0 +1,31 @@
+.container{
+    width: 50%;
+    border-radius: 10px;
+    margin: 110px auto;
+    padding: 100px 0px;
+    background-color: #2d3436;
+    h1{
+        font-size: 28px;
+    }
+    
+    form,h1{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        align-items: center;
+        color: #fff;
+        input{
+            margin-top: 48px;
+            padding: 10px;
+            width: 80%;
+            border-radius: 10px;
+        }
+        button{
+            margin-top: 36px;
+            padding: 8px;
+            width: 30%;
+            border-radius: 10px;
+            background-color: #dfe6e9;
+        }
+    }
+}

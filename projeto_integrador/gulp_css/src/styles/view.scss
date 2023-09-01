@@ -1,0 +1,25 @@
+@use "main";
+@use "editor";
+nav{
+    display: flex;
+    flex-direction: row-reverse;
+    button{
+        width: 10%;
+    }
+}
+main{
+display: flex;
+justify-content: center;
+margin-top: 80px;
+    img{
+        max-width: 100%;
+
+    }
+    .container{
+        width: 40%;
+        margin: auto 100px;
+        h2{
+            font-size: 32px;
+        }
+    }
+}

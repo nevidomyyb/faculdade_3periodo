@@ -1,0 +1,36 @@
+@use "main";
+
+header{
+    display: flex;
+    flex-direction: row-reverse;
+    vertical-align: middle;
+    button{
+        margin:16px 12px;
+        width: 10%;
+
+    }
+}
+
+.container{
+    margin: 0;
+    width: 100vw;
+    height: 66.3vh;
+    border-radius: 0px;
+    .card{
+        background-color: #b2bec3;
+        max-width: 30%;
+        display: inline-block;
+        flex-wrap: wrap;
+        margin: 0 23px;
+        h3{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 12px 0;
+        }
+
+        img{
+            max-width: 300px;
+        }
+    }
+}

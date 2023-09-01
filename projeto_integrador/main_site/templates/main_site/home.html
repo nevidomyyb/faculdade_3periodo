@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial</title>
+    <link rel="stylesheet" href="{%static '/main_site/css/home.css'%}">
+</head>
+<body>
+        <nav>
+            <header>
+                <button>Registre-se</button>
+                <button>Login</button>
+            </header>
+        </nav>
+        <main>
+            <div class="container">
+                {% for item in projetos %}
+                    <div class="card" id="projeto_{{forloop.counter}}">
+                        <h3 class="clicavel" id="{{forloop.counter}}">{{item.titulo}}</h3>
+                        <img  class="clicavel" id="{{forloop.counter}}" src="https://via.placeholder.com/320x320" alt="">
+                        <h3  class="clicavel" id="{{forloop.counter}}">{{item.descricao}}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
+</body>
+</html>
+<script>
+
+    const elementos = document.getElementsByClassName('clicavel') 
+
+    function handleClick(evento) {
+        console.log(evento.target.id)
+    }
+
+    for (const elemento of elementos) {
+        if(elemento.classList.contains('clicavel')) {
+            elemento.addEventListener('click', handleClick)
+        }
+    }
+
+</script>
