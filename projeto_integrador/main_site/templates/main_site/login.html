@@ -1,22 +1,45 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="./dist/styles/main.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="{%static '/main_site/css/login.css'%}"><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Inicie a sessão</h1>
+        {% if login %}
 
-        <form action="">
-            <input type="email" name="" id="" placeholder="Insira o email">
-            <input type="password" name="" id="" placeholder="Insira a senha">
-            <button type="submit">Entrar</button>
-        </form>
+            <h1>Inicie a sessão</h1>
+
+            <form action="/auth/" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+
+                <!-- <input type="email" name="" id="" placeholder="Insira o email">
+                <input type="password" name="" id="" placeholder="Insira a senha"> -->
+                    {{field}}
+
+                {% endfor %}
+                <button type="submit">Entrar</button>
+            </form>
+
+        {% else %}
+
+            <h1>Registre-se</h1>
+
+            <form action="">
+                <input type="email" name="" id="" placeholder="Insira o email">
+                <input type="password" name="" id="" placeholder="Insira a senha">
+                <button type="submit">Registrar</button>
+            </form>
+
+        {% endif %}
+        
     </div>
 </body>
 </html>

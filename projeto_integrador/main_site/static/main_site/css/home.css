@@ -358,7 +358,7 @@ header {
   flex-direction: row-reverse;
   vertical-align: middle;
 }
-header button {
+header button, header a {
   margin: 16px 12px;
   width: 10%;
 }
