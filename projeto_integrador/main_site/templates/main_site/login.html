@@ -5,7 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    {% if login %}
+        <title>Login</title>
+    {% else %}
+        <title>Registrar</title>
+    {% endif %}
     <link rel="stylesheet" href="{%static '/main_site/css/login.css'%}"><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -20,8 +24,6 @@
                 {% csrf_token %}
                 {% for field in form %}
 
-                <!-- <input type="email" name="" id="" placeholder="Insira o email">
-                <input type="password" name="" id="" placeholder="Insira a senha"> -->
                     {{field}}
 
                 {% endfor %}
@@ -32,9 +34,13 @@
 
             <h1>Registre-se</h1>
 
-            <form action="">
-                <input type="email" name="" id="" placeholder="Insira o email">
-                <input type="password" name="" id="" placeholder="Insira a senha">
+            <form action="/perform_register/" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+
+                    {{field}}
+                    {{field.errors}}
+                {% endfor %}
                 <button type="submit">Registrar</button>
             </form>
 

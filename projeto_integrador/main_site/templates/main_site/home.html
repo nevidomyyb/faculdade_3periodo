@@ -14,6 +14,7 @@
                 
                 {% if usuario_logado %}
                     <button id="logout_button">Logout</button>  
+                    <button id="criar_button">Criar projeto</button>
                 {% else %}
                     <button id="login_button">Login</button>    
                     <button id="register_button">Registre-se</button>
@@ -36,39 +37,39 @@
 </body>
 </html>
 <script>
-
+    //Componentes dos botões
     const elementos = document.getElementsByClassName('clicavel') 
     const logout_buttom = document.getElementById('logout_button')
     const login_buttom = document.getElementById('login_button')
     const register_button = document.getElementById('register_button')
-
+    //Função de redirecionar para o login
     if (logout_buttom) logout_buttom.addEventListener('click', logout_function)
     function logout_function() {
         const a = document.createElement('a')
         a.href = "{% url 'main_site:logout' %}"
         a.click()
     }
+    //Função de redirecionar para o logout
     if (login_buttom) login_buttom.addEventListener('click', login_redirect_function)
     function login_redirect_function() {
         const a = document.createElement('a')
         a.href = "{% url 'main_site:login' %}"
         a.click()
-
     }
-
-
-
-
-
-
-    function handleClick(evento) {
-        console.log(evento.target.id)
-    }
-
+    //Adicionar redirecionamento para cada card
     for (const elemento of elementos) {
         if(elemento.classList.contains('clicavel')) {
             elemento.addEventListener('click', handleClick)
         }
+    }
+
+
+
+
+
+    //Função de redirecionar para infos do card.
+    function handleClick(evento) {
+        console.log(evento.target.id)
     }
 
 </script>

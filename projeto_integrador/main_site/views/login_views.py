@@ -1,28 +1,42 @@
-from django.contrib.staticfiles import finders
 from django.shortcuts import render
-from main_site.models import Projeto
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as lg
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from main_site.forms.login_form import LoginForm
+from main_site.forms.register_form import RegisterForm
 from django.http import Http404
-# Create your views here.
+from django.contrib.auth.models import User
 
-def home(request, *args, **kwargs):
-    home_css_path = finders.find('main_site/css/home.css')
-    template_path = 'main_site/home.html'
-    
+def register(request, *args, **kwargs):
+    register_form_data = request.session.get('register_form_data', None)
+    form = RegisterForm(register_form_data)
 
-    context = {
-        "projetos": [
-            {"titulo": projeto.titulo, "imagem": "media/"+projeto.imagem.path, "descricao": projeto.descricao[0:len(projeto.descricao)-10]} for projeto in Projeto.objects.all()
-        ]
-    }
-    if request.user.is_authenticated:
-        context["usuario_logado"] = request.user.username
-    return render(request, template_path, context=context)
+    return render(request, 'main_site/login.html', {
+        'login': False,
+        'form': form,
+        'form_action': reverse('main_site:perform_register')
+    })
+
+def perform_register(request, *args, **kwargs):
+    if not request.POST:
+        raise Http404
+    POST = request.POST
+    request.session['register_form_data'] = POST
+    form = RegisterForm(POST)
+    if form.is_valid():
+        print('Form is valid')
+        # user = form.save(commit=False)
+        user = User(
+            username=form.cleaned_data['username'],
+            email=form.cleaned_data['email']
+        )
+        user.set_password(form.cleaned_data['password'])
+        user.save()
+        del(request.session['register_form_data'])
+        return redirect(reverse('main_site:login'))
+    return redirect('main_site:register')
 
 def login(request, *args, **kwargs):
     form = LoginForm()
