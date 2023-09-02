@@ -12,15 +12,16 @@
             <header>
                 <button>Registre-se</button>
                 <button>Login</button>
+                <h2><b>Gerenciador de Projetos Coletivo</b></h2>
             </header>
         </nav>
         <main>
             <div class="container">
                 {% for item in projetos %}
                     <div class="card" id="projeto_{{forloop.counter}}">
-                        <h3 class="clicavel" id="{{forloop.counter}}">{{item.titulo}}</h3>
-                        <img  class="clicavel" id="{{forloop.counter}}" src="https://via.placeholder.com/320x320" alt="">
-                        <h3  class="clicavel" id="{{forloop.counter}}">{{item.descricao}}</h3>
+                        <h3 class="clicavel bold-text" id="{{forloop.counter}}">{{item.titulo}}</h3>
+                        <img  class="clicavel" id="{{forloop.counter}}" src="{{item.imagem}}" alt="">
+                        <h4  class="clicavel adding" id="{{forloop.counter}}">{{item.descricao}}</h3>
                     </div>
                 {% endfor %}
             </div>
