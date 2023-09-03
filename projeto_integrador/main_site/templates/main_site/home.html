@@ -10,8 +10,6 @@
 <body>
         <nav>
             <header>
-                
-                
                 {% if usuario_logado %}
                     <button id="logout_button">Logout</button>  
                     <button id="criar_button">Criar projeto</button>
@@ -26,10 +24,10 @@
         <main>
             <div class="container">
                 {% for item in projetos %}
-                    <div class="card" id="projeto_{{forloop.counter}}">
-                        <h3 class="clicavel bold-text" id="{{forloop.counter}}">{{item.titulo}}</h3>
-                        <img  class="clicavel" id="{{forloop.counter}}" src="{{item.imagem}}" alt="">
-                        <h4  class="clicavel adding" id="{{forloop.counter}}">{{item.descricao}}</h3>
+                    <div class="card" id="{{item.idprojeto}}">
+                        <h3 class="clicavel bold-text" id="{{item.idprojeto}}">{{item.titulo}}</h3>
+                        <img  class="clicavel" id="{{item.idprojeto}}" src="{{item.imagem}}" alt="">
+                        <h4  class="clicavel adding" id="{{item.idprojeto}}">{{item.descricao}}</h3>
                     </div>
                 {% endfor %}
             </div>
@@ -47,6 +45,13 @@
     function logout_function() {
         const a = document.createElement('a')
         a.href = "{% url 'main_site:logout' %}"
+        a.click()
+    }
+    //Função de redirecionar para o register
+    if (register_button) register_button.addEventListener("click", register_redirect_function)
+    function register_redirect_function() {
+        const a = document.createElement('a')
+        a.href = "{% url 'main_site:register' %}"
         a.click()
     }
     //Função de redirecionar para o logout
@@ -70,6 +75,11 @@
     //Função de redirecionar para infos do card.
     function handleClick(evento) {
         console.log(evento.target.id)
+        const a = document.createElement('a')
+        const b = `/projeto/${evento.target.id}/`
+        console.log(b)
+        a.href =b
+        a.click()
     }
 
 </script>

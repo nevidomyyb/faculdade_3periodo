@@ -42,6 +42,7 @@
                     {{field.errors}}
                 {% endfor %}
                 <button type="submit">Registrar</button>
+                <button id="button_voltar">Voltar</button>
             </form>
 
         {% endif %}
@@ -49,3 +50,13 @@
     </div>
 </body>
 </html>
+<script>
+
+    const button_voltar = document.getElementById('button_voltar')
+    if (button_voltar) button_voltar.addEventListener("click", () => {
+        const a = document.createElement('a')
+        a.href= "{% url 'main_site:home' %}"
+        a.click()
+    })
+
+</script>

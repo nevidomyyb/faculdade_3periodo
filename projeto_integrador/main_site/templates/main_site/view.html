@@ -1,21 +1,37 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar projeto</title>
-    <link rel="stylesheet" href="./dist/styles/view.css">
+    <link rel="stylesheet" href="{% static 'main_site/css/view.css' %}">
 </head>
 <body>
     <nav>
-        <button>Voltar</button>
+        <button id="voltar_button">Voltar</button>
     </nav>
     <main>
         <div class="container">
-            <h2>Nome do projeto</h2>
-            <textarea name="" id="" cols="60" rows="20">Descrição do projeto</textarea>
+            <h2>{{projeto.titulo}}</h2>
+            <textarea name="" id="" cols="60" rows="20" disabled style="background-color: white;">{{projeto.descricao}}</textarea>
+            {% if projeto.autor %}
+                <button id="editar_button" style="margin-top: 12px;">Editar</button>
+            {% endif %}
         </div>
-        <img src="https://via.placeholder.com/320x320" alt="">
+        <img src="{{projeto.imagem.url}}" alt=""/>
     </main>
 </body>
 </html>
+<script>
+
+    const voltar_button = document.getElementById('voltar_button')
+    if (voltar_button) voltar_button.addEventListener("click", voltar_button_function)
+    function voltar_button_function() {
+        const a = document.createElement('a')
+        a.href = '{% url "main_site:home" %}'
+        a.click();
+    }
+
+</script>

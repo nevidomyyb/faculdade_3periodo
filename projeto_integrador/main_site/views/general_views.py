@@ -10,9 +10,10 @@ def home(request, *args, **kwargs):
 
     context = {
         "projetos": [
-            {"titulo": projeto.titulo, "imagem": "media/"+projeto.imagem.path, "descricao": projeto.descricao[0:len(projeto.descricao)-10]} for projeto in Projeto.objects.all()
+            {"idprojeto": projeto.idprojeto, "titulo": projeto.titulo, "imagem": "media/"+projeto.imagem.path, "descricao": projeto.descricao[0:len(projeto.descricao)-10]} for projeto in Projeto.objects.all()
         ]
     }
+    print(context)
     if request.user.is_authenticated:
         context["usuario_logado"] = request.user.username
     return render(request, template_path, context=context)

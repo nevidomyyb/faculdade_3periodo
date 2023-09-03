@@ -26,8 +26,6 @@ def perform_register(request, *args, **kwargs):
     request.session['register_form_data'] = POST
     form = RegisterForm(POST)
     if form.is_valid():
-        print('Form is valid')
-        # user = form.save(commit=False)
         user = User(
             username=form.cleaned_data['username'],
             email=form.cleaned_data['email']
