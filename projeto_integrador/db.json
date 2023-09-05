@@ -1,0 +1,251 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-09-02T03:10:16.802Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Projeto object (1)",
+      "action_flag": 1,
+      "change_message": [
+        {
+          "added": {}
+        }
+      ]
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-09-02T03:12:25.290Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Projeto object (1)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-09-02T03:12:38.624Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "Projeto object (2)",
+      "action_flag": 1,
+      "change_message": [
+        {
+          "added": {}
+        }
+      ]
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-09-02T16:57:39.556Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "2",
+      "object_repr": "['Já existe um usuário cadastrado para esse nome de usuário.']",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-09-02T17:04:55.309Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "3",
+      "object_repr": "['Já existe um usuário cadastrado para esse nome de usuário.']",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-09-02T17:13:43.093Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "4",
+      "object_repr": "pedro",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-09-02T17:13:43.192Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "5",
+      "object_repr": "pedro1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-09-05T17:02:21.104Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Projeto object (4)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2023-09-05T17:02:21.203Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "Projeto object (3)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2023-09-05T17:02:21.300Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "Projeto object (2)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2023-09-05T17:06:50.687Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "Projeto object (5)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2023-09-05T17:13:07.852Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Projeto object (1)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2023-09-05T17:13:53.343Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "Projeto object (2)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2023-09-05T18:28:37.593Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "6",
+      "object_repr": "pedro",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2023-09-05T18:28:37.684Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "7",
+      "object_repr": "pedro1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$09J4AS84Xx0zSWxW6tvdlC$FSva0JlZ0eVUpvVK5mYINTMt89kML7bC7g/gKyfVs+A=",
+      "last_login": "2023-09-05T18:28:27.871Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@mail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-09-02T03:07:06.347Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "5tqg2ewwl4m2lsrre32b8uc9nrdolv51",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGlmOrfWHkp4zWLveDQ4gR4qTCnF3iJQC2jcz76UybmvNW5clT6zOalCn342wPKTtgO_YbrMuc1uXifSu6IN2fZ1ZnpfD_Tuo2Ou3jia4EcUxsyNBHBHFg-digclRNBaIvMVkYwgpCCQM3kMaDCRLbNX7AxEjODg:1qdamp:SSe6qR8S6ZgNJ9WHtTqFQWkg3-BamAt-wS89xmUxlms",
+      "expire_date": "2023-09-19T18:28:27.960Z"
+    }
+  },
+  {
+    "model": "main_site.projeto",
+    "pk": 4,
+    "fields": {
+      "titulo": "Projeto Lua",
+      "descricao": "O projeto lua foi desenvolvido com parceria da NASA.\r\nFeito para ser um satélite natural da  terra.",
+      "imagem": "images/moon.jpg",
+      "autor": 1
+    }
+  },
+  {
+    "model": "main_site.projeto",
+    "pk": 7,
+    "fields": {
+      "titulo": "Trash",
+      "descricao": "Trash é um design feito pela Riot Games para seu jogo Valorant, é um animal fantasioso que simula uma espécie de tatu-dragão-peixe.",
+      "imagem": "images/UltimatePhotoEditor_2023_07_27_02_18_02.png",
+      "autor": 1
+    }
+  }
+]
