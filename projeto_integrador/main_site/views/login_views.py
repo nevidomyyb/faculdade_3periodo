@@ -56,10 +56,8 @@ def auth(request, *args, **kwargs):
             username=form.cleaned_data.get('username', ''),
             password=form.cleaned_data.get('password', ''),
         )
-        print(is_authenticated)
         if is_authenticated is not None:
             lg(request, is_authenticated)
-            print("Está autenticado: ",request.user.is_authenticated)
             return redirect(reverse("main_site:home"))
     return redirect(reverse('main_site:login'))
 

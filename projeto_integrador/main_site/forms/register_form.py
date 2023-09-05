@@ -30,9 +30,7 @@ class RegisterForm(forms.Form):
     def clean_email(self):
         email = self.cleaned_data['email']
         exist = User.objects.filter(email=email).first()
-        print(f"Email encontrado: {exist}")
         if exist: 
-            print("Esse email ja existe irmão")
             raise ValidationError(f'Já existe usuário criado com esse email.', code='invalid')
         return email
     

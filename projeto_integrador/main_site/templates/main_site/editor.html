@@ -10,15 +10,51 @@
 </head>
 <body>
     <nav>
-        <button>Voltar</button>
+        <button id="voltar_button" class="{{projeto.idprojeto}}">Voltar</button>
     </nav>
     <main> 
         <div class="container">
-            <h2>Nome do projeto</h2>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Descrição do projeto"></textarea>
-            <input type="file" name="" id="" placeholder="Envie sua imagem">
-            <button type="submit">Salvar</button>
+            {% if criacao %}
+
+                <form action="/projeto/criar/performar/" enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <label for="{{field.id_for_label}}">{{field.label}}</label>
+                        {{field}}
+                    {% endfor %}
+
+                    <button type="submit">Salvar</button>
+                </form>
+
+            {% else %}
+                <form action="/projeto/editar/performar/{{projeto.idprojeto}}/" enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <label for="{{field.id_for_label}}">{{field.label}}</label>
+                        {{field}}
+                    {% endfor %}
+
+                    <button type="submit">Salvar</button>
+                </form>
+            {% endif %}
         </div>
     </main>
 </body>
 </html>
+<script>
+    const voltar_button = document.getElementById('voltar_button')
+    if (voltar_button) voltar_button.addEventListener('click', voltar_button_function)
+    const id = voltar_button.classList[0]
+    function voltar_button_function() {
+        const a = document.createElement('a')
+        let b;
+        if (!id){
+            b = `/`
+        } else {
+            b =  `/projeto/${id}/`
+        }
+        a.href = b
+        a.click();
+    }
+
+</script>

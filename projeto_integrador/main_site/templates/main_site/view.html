@@ -17,7 +17,7 @@
             <h2>{{projeto.titulo}}</h2>
             <textarea name="" id="" cols="60" rows="20" disabled style="background-color: white;">{{projeto.descricao}}</textarea>
             {% if projeto.autor %}
-                <button id="editar_button" style="margin-top: 12px;">Editar</button>
+                <button id="editar_button" class="{{projeto.id}}" style="margin-top: 12px;">Editar</button>
             {% endif %}
         </div>
         <img src="{{projeto.imagem.url}}" alt=""/>
@@ -31,6 +31,16 @@
     function voltar_button_function() {
         const a = document.createElement('a')
         a.href = '{% url "main_site:home" %}'
+        a.click();
+    }
+
+    const editar_button = document.getElementById('editar_button')
+    if (editar_button) editar_button.addEventListener('click', editar_button_function)
+    const id = editar_button.classList[0]
+    function editar_button_function() {
+        const a = document.createElement('a')
+        const b =  `/projeto/editar/${id}/`
+        a.href = b
         a.click();
     }
 

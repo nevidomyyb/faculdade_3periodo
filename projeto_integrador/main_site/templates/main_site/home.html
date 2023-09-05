@@ -39,6 +39,7 @@
     const elementos = document.getElementsByClassName('clicavel') 
     const logout_buttom = document.getElementById('logout_button')
     const login_buttom = document.getElementById('login_button')
+    const criar_buttom = document.getElementById('criar_button')
     const register_button = document.getElementById('register_button')
     //Função de redirecionar para o login
     if (logout_buttom) logout_buttom.addEventListener('click', logout_function)
@@ -61,6 +62,12 @@
         a.href = "{% url 'main_site:login' %}"
         a.click()
     }
+    if (criar_buttom) criar_buttom.addEventListener("click", criar_function)
+    function criar_function() {
+        const a = document.createElement('a')
+        a.href = "{% url 'main_site:criar_projeto' %}"
+        a.click()
+    }
     //Adicionar redirecionamento para cada card
     for (const elemento of elementos) {
         if(elemento.classList.contains('clicavel')) {
@@ -77,7 +84,6 @@
         console.log(evento.target.id)
         const a = document.createElement('a')
         const b = `/projeto/${evento.target.id}/`
-        console.log(b)
         a.href =b
         a.click()
     }

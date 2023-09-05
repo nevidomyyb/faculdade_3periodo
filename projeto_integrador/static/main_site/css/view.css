@@ -371,6 +371,14 @@ nav button {
   font-size: 24px;
 }
 
+.esconder-texto {
+  display: none;
+}
+
+label {
+  color: white;
+}
+
 nav {
   display: flex;
   flex-direction: row-reverse;
@@ -382,10 +390,11 @@ nav button {
 main {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 main img {
-  max-width: 100%;
+  width: 40%;
+  height: 40%;
 }
 main .container {
   width: 40%;

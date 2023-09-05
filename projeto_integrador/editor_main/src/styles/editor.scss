@@ -10,8 +10,22 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    input{
+    textarea {
+        border-radius: 5px;
+    }
+    input {
+        border-radius: 5px;
+    }
+    label{
         margin: 16px 0;
+        background-color: #b2bec3;
+        padding: 8px;
+        border-radius: 5px;
+    }
+    input[type="file"]{
+        margin: 16px 0;
+        display: none;
+        
     }
     h2{
         color:#fff;

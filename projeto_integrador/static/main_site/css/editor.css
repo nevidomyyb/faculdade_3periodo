@@ -370,3 +370,11 @@ nav button {
   margin: 16px 0;
   font-size: 24px;
 }
+
+.esconder-texto {
+  display: none;
+}
+
+label {
+  color: white;
+}
