@@ -8,6 +8,12 @@ from django.shortcuts import redirect
 from django.urls import reverse
 import os
 
+def excluir_projeto(request, pk):
+    projeto_obj = get_object_or_404(Projeto, pk=pk)
+    if not projeto_obj.autor == request.user: Http404
+    projeto_obj.delete()
+    return redirect(reverse("main_site:home"))
+
 def visualizar_projeto(request, pk,*args, **kwargs):
     projeto_obj = get_object_or_404(Projeto, pk=pk)
     template_path = 'main_site/view.html'

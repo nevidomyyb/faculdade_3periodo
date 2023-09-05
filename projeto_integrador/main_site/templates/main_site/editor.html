@@ -24,6 +24,7 @@
                     {% endfor %}
 
                     <button type="submit">Salvar</button>
+                   
                 </form>
 
             {% else %}
@@ -36,6 +37,7 @@
 
                     <button type="submit">Salvar</button>
                 </form>
+                <button id="excluir_button" type="button" style="margin-top: 8px; background-color: rgb(248, 153, 153);">Excluir</button>
             {% endif %}
         </div>
     </main>
@@ -43,6 +45,7 @@
 </html>
 <script>
     const voltar_button = document.getElementById('voltar_button')
+    const excluir_button = document.getElementById('excluir_button')
     if (voltar_button) voltar_button.addEventListener('click', voltar_button_function)
     const id = voltar_button.classList[0]
     function voltar_button_function() {
@@ -56,5 +59,16 @@
         a.href = b
         a.click();
     }
-
+    if(excluir_button) excluir_button.addEventListener("click", excluir_button_function)
+    function excluir_button_function() {
+        const a = document.createElement('a')
+        let b;
+        if (!id){
+            b = `/`
+        } else {
+            b =  `/projeto/excluir/${id}/`
+        }
+        a.href = b
+        a.click();
+    }
 </script>

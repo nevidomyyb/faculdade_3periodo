@@ -32,19 +32,18 @@ class Projeto(models.Model):
                 if isinstance(this.imagem, InMemoryUploadedFile):
                     # Se a imagem atual for um arquivo em memória, fecha o arquivo antes de excluí-lo
                     this.imagem.file.close()
-                
-                diretorio = MEDIA_ROOT+'/CACHE/images/images/'
-                # Use a função os.listdir() para listar os diretórios e arquivos no caminho especificado
-                conteudo = os.listdir(diretorio)
-                # Itere pelos itens na lista para identificar os diretórios
-                diretorios = [item for item in conteudo if os.path.isdir(os.path.join(diretorio, item))]
-                # Imprima a lista de diretórios
-                for diretorioz in diretorios:
-                    print(diretorioz)
-                    print(os.path.basename(this.imagem.name))
-                    if (diretorioz==os.path.basename(this.imagem.name) or diretorioz in os.path.basename(this.imagem.name) or os.path.basename(this.imagem.name) in diretorioz):
-                        print("Diretorio excluido")
-                        shutil.rmtree(diretorio+diretorioz)
+                try:
+                    diretorio = MEDIA_ROOT+'/CACHE/images/images/'
+                    conteudo = os.listdir(diretorio)
+                    diretorios = [item for item in conteudo if os.path.isdir(os.path.join(diretorio, item))]
+                    for diretorioz in diretorios:
+                        print(diretorioz)
+                        print(os.path.basename(this.imagem.name))
+                        if (diretorioz==os.path.basename(this.imagem.name) or diretorioz in os.path.basename(this.imagem.name) or os.path.basename(this.imagem.name) in diretorioz):
+                            print("Diretorio excluido")
+                            shutil.rmtree(diretorio+diretorioz)
+                except:
+                    pass
                 this.imagem.delete(save=False)
         except Projeto.DoesNotExist:
             pass
