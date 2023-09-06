@@ -17,7 +17,15 @@ HTML + CSS com SASS e GULP para criação do frontend.
 `npm install`
 `npm run gulp watch`
 * Salvar o arquivo scss alterado
--O gulp irá compilar o arquivo diretamente para o static folder correspondente.
+- O gulp irá compilar o arquivo diretamente para o static folder correspondente.
 
 # Em relação ao banco de dados:
-O banco utilizado para desenvolvimento foi o sqlite porém pode-se utilizar outros alterando nas configurações do Django no folder: [./pi/settings.py](https://github.com/nevidomyyb/faculdade_3periodo/blob/main/projeto_integrador/pi/settings.py)
+O banco utilizado para desenvolvimento foi o sqlite porém pode-se utilizar outros alterando nas configurações do Django no folder: [./pi/settings.py](https://github.com/nevidomyyb/faculdade_3periodo/blob/main/projeto_integrador/pi/settings.py).
+- O banco db.sqlite3 já possui as credênciais de autenticação do usuário administrador, porém caso queira criar uma outra instância do banco com outra tecnologia preparei um arquivo .json com a fixture do usuário e o projeto de exemplo.
+# Para utilizar a fixture:
+1. Considerando que um novo banco será criado (Independente da tecnologia)
+- `python manage.py makemigrations`
+- `python manage.py migrate`
+- `python manage.py loaddata {caminho_do_arquivo.json}`
+  
+3. 
