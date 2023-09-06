@@ -13,10 +13,10 @@ HTML + CSS com SASS e GULP para criação do frontend.
 3. Iniciar o servidor local:
 `python manage.py runserver`
 4. Passo adicional: **Em caso de alteração no SCSS**
-4.1 Instalar dependências do node:
+4.1. Instalar dependências do node:
 `npm install`
 `npm run gulp watch`
-4.2 Salvar o arquivo scss alterado
+4.2. Salvar o arquivo scss alterado
 O gulp irá compilar o arquivo diretamente para o static folder correspondente.
 
 # Em relação ao banco de dados:
