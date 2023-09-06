@@ -27,5 +27,3 @@ O banco utilizado para desenvolvimento foi o sqlite porém pode-se utilizar outr
 - `python manage.py makemigrations`
 - `python manage.py migrate`
 - `python manage.py loaddata {caminho_do_arquivo.json}`
-  
-3. 
