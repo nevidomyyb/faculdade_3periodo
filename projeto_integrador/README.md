@@ -20,4 +20,4 @@ HTML + CSS com SASS e GULP para criação do frontend.
 O gulp irá compilar o arquivo diretamente para o static folder correspondente.
 
 #Em relação ao banco de dados:
-O banco utilizado para desenvolvimento foi o sqlite porém pode-se utilizar outros alterando nas configurações do Django no folder: [,/pi/settings.py]([url](https://github.com/nevidomyyb/faculdade_3periodo/blob/main/projeto_integrador/pi/settings.py)https://github.com/nevidomyyb/faculdade_3periodo/blob/main/projeto_integrador/pi/settings.py)
+O banco utilizado para desenvolvimento foi o sqlite porém pode-se utilizar outros alterando nas configurações do Django no folder: [./pi/settings.py](https://github.com/nevidomyyb/faculdade_3periodo/blob/main/projeto_integrador/pi/settings.py)
