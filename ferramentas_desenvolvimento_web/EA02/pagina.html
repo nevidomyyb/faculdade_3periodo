@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Autenticação</title>
+</head>
+<body>
+    <?php
+    session_start();
+
+    if(isset($_SESSION['email'])){
+        echo '<h1>Bem-vindo, ' . $_SESSION['email'] . '</h1>';
+        echo '<form action="processar.php" method="POST">';
+        echo '<input type="submit" value="Sair" name="sair">';
+        echo '</form>';
+    } else {
+        echo '<h1>Autenticação</h1>';
+        echo '<form action="processar.php" method="POST">';
+        echo '<label for="email">E-mail:</label>';
+        echo '<input type="email" id="email" name="email" required><br><br>';
+
+        echo '<label for="senha">Senha:</label>';
+        echo '<input type="password" id="senha" name="senha" required><br><br>';
+
+        echo '<input type="submit" value="Entrar" name="entrar">';
+        echo '</form>';
+    }
+    ?>
+</body>
+</html>
