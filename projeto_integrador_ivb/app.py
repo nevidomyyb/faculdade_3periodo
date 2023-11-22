@@ -31,6 +31,5 @@ def create_app(db_url=None):
     migrate = Migrate(app, db)
 
     api = Api(app)
-    
 
     return app
