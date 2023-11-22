@@ -6,6 +6,8 @@ from flask_migrate import Migrate
 
 from db import db
 
+from resources import blp as ponto_blp
+
 def create_app(db_url=None):
     app = Flask(__name__, instance_path=os.getcwd())
     basedir = os.path.abspath(os.path.dirname(__file__))
@@ -14,7 +16,6 @@ def create_app(db_url=None):
     DB_USER = os.environ.get("DB_USER")
     DB_PASSWORD = os.environ.get("DB_PASSWORD")
     DB_NAME = os.environ.get("DB_NAME")
-    DEBUG = os.environ.get("DEBUG")
 
     app.config["PROPAGATION_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "PROJETO INTEGRADOR REST API"
@@ -31,5 +32,7 @@ def create_app(db_url=None):
     migrate = Migrate(app, db)
 
     api = Api(app)
+
+    api.register_blueprint(ponto_blp)
 
     return app
