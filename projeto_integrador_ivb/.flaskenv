@@ -1,0 +1,5 @@
+DEBUG=1
+DB_USER=root
+DB_PASSWORD=Senha!123
+DB_NAME=pi_4b
+DB_HOST=localhost
